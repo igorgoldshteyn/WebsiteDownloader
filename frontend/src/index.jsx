@@ -5,11 +5,17 @@ import NavBar from './NavBar';
 import LinkInput from './LinkInput';
 import Footer from './Footer';
 
+import './styles.css'
+
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-	<React.StrictMode>
+	<>
+
 		<NavBar />
 		<LinkInput />
-		<Footer />
-	</React.StrictMode>
+		<div className='footer'>
+		<Footer  />
+		</div>
+	</>
 );

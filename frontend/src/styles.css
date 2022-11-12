@@ -1,0 +1,47 @@
+body{
+    background-color: #ffffff;
+}
+
+.footer {
+
+    color: white;
+    background-color:rgb(58, 58, 63);
+    padding: 10px;
+    position:fixed;
+    bottom:0;
+    left:0;
+    right:0;
+    text-align:center;
+}
+
+.navBar {
+    display: ;
+    color: rgb(247, 228, 228);
+    background-color:rgb(19, 5, 20) ;
+    padding: 10px;
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    text-align:center;
+}
+
+.navBar-logo{
+    position: absolute;
+    left: 20px;
+}
+
+.linkInput {
+
+    color: black;
+    background-color:rgb(187, 202, 202) ;
+    padding: 10px;
+    position:fixed;
+    margin-left: 40%;
+    /* margin-right: 50%; */
+    top:40%;
+    text-align:center;
+    border: solid #818288 10px;
+    border-radius: 20px;
+
+}
