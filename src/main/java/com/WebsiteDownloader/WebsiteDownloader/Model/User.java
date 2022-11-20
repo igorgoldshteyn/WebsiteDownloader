@@ -1,4 +1,4 @@
-package com.chaikhona24.chaikhona24.Model;
+package com.WebsiteDownloader.WebsiteDownloader.Model;
 
 public class User {
 

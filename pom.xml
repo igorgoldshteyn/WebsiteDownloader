@@ -8,11 +8,11 @@
         <version>2.7.0</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.chaikhona24</groupId>
-    <artifactId>Chaikhona24</artifactId>
+<groupId>com.WebsiteDownloader</groupId>
+<artifactId>WebsiteDownloader</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>Chaikhona24</name>
-    <description>Chaikhona24</description>
+<name>WebsiteDownloader</name>
+<description>WebsiteDownloader</description>
     <properties>
         <java.version>11</java.version>
     </properties>
@@ -41,11 +41,7 @@
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
             <version>2.7.5</version>
         </dependency>
-
-
-
     </dependencies>
-
 
     <build>
         <plugins>
