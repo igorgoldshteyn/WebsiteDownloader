@@ -19,13 +19,23 @@ public class WebSiteController {
 
     @GetMapping("/")
     public String mainPage() {
+
+        System.out.println("sout mainPage");
         logger.info("mainPage");
-        return "/";
+        return "mainPage";
     }
 
-    @GetMapping("/downloadByUrl/{url}")
+    @GetMapping("/downloadByUrl")
+//    public String downloadByUrl(@RequestParam String url) throws IOException, InterruptedException {
     public String downloadByUrl(@RequestParam String url) throws IOException, InterruptedException {
+        if(url == null){
+            System.out.println("URL is null");
+            return "URL is null";
+
+        }
+
         logger.info("downloadByUrl");
+        logger.info(url);
         return DownloadService.downloadByUrl(url);
     }
 

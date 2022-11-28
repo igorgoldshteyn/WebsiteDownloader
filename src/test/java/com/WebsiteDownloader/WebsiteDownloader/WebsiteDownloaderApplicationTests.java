@@ -10,4 +10,11 @@ class WebsiteDownloaderApplicationTests {
     void contextLoads() {
     }
 
+    @Test
+    void testRestApi() {
+
+
+
+    }
+
 }
