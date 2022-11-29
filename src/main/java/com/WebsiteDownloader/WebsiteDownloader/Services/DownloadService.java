@@ -30,6 +30,9 @@ public class DownloadService {
 
         logger.info(response.toString());
 
+// сделать создание файла из этого html
+
+
         return response.body();
 
         }catch (IOException e){
@@ -38,3 +41,12 @@ public class DownloadService {
         }
     }
 }
+
+    //  public static String getDownloadRequestsByUserId(String id) {
+
+        // }catch (IOException e){
+        //     System.out.println(e);
+        //     return e.toString();
+        // }
+    // }
+

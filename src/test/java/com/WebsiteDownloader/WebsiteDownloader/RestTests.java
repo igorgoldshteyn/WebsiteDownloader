@@ -33,4 +33,32 @@ public class RestTests {
         assertEquals("mainPage",response.body());
 
     }
+
+      @Test
+    void userlogin() {
+        // HttpClient client = HttpClient.newHttpClient();
+        // HttpRequest request = HttpRequest.newBuilder().uri(URI.create(DEFAULT_URL + "login" )).build();
+        // HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+        // assertEquals("mainPage",response.body());
+
+    }
+
+
+      @Test
+    void userloginWithWrongLoginAndPassword() {
+        // HttpClient client = HttpClient.newHttpClient();
+        // HttpRequest request = HttpRequest.newBuilder().uri(URI.create(DEFAULT_URL + "login" )).build();
+        // HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+        // assertEquals("mainPage",response.body());
+
+    }
+
+    @Test
+    void createUser() {
+        // HttpClient client = HttpClient.newHttpClient();
+        // HttpRequest request = HttpRequest.newBuilder().uri(URI.create(DEFAULT_URL + "login" )).build();
+        // HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+        // assertEquals("mainPage",response.body());
+
+    }
 }

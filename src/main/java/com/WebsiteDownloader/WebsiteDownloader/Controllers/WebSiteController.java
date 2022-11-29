@@ -39,6 +39,17 @@ public class WebSiteController {
         return DownloadService.downloadByUrl(url);
     }
 
+    //  @GetMapping("/getDownloadRequestsByUserId")
+    // public String getDownloadRequestsByUser(@RequestParam String id) {
+    //     return DownloadService.downloadByUrl(url);
+    // }
+
+    //  @GetMapping("/login")
+    // public String login(@RequestParam String login, @RequestParam String password ){
+    //     return UserService.login(login,password);
+    // }
+
+
 
 
 }
