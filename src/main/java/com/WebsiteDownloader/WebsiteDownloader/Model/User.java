@@ -1,7 +1,15 @@
 package com.WebsiteDownloader.WebsiteDownloader.Model;
 
-public class User {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "Users")
+public class User {
+    @Id
+    @GeneratedValue
     private Integer id;
     private String name;
     private String email;
