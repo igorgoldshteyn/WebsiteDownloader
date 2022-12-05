@@ -16,7 +16,7 @@ public class DownloadService {
     private static Logger logger = LoggerFactory.getLogger(WebsiteDownloaderApplication.class);
 
 
-    public static String downloadByUrl(String url) throws IOException, InterruptedException { // надо дотестировать
+    public static String downloadByUrl(String url) throws IOException, InterruptedException {
         logger.info("Service downloadByUrl");
         logger.info("Url = " + url);
         try {
@@ -40,13 +40,9 @@ public class DownloadService {
             return e.toString();
         }
     }
+
+      public static String getDownloadRequestsByUserId(String id) {
+        return "OK";
+     }
 }
-
-    //  public static String getDownloadRequestsByUserId(String id) {
-
-        // }catch (IOException e){
-        //     System.out.println(e);
-        //     return e.toString();
-        // }
-    // }
 
