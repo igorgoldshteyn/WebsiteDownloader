@@ -31,18 +31,18 @@ export default function LinkInput() {
 
 	function sendLinkToServerGET() {
 
-		const URL = 'http://ya.ru/';
+		// const URL = 'http://ya.ru/';
 
-		fetch(URL)
-			.then((data) => {
-				return data.json();
-			})
-			.then((res) => {
-				console.log(res);
-			})
-			.catch((error) => {
-				console.log(error);
-			});
+		// fetch(URL)
+		// 	.then((data) => {
+		// 		return data.json();
+		// 	})
+		// 	.then((res) => {
+		// 		console.log(res);
+		// 	})
+		// 	.catch((error) => {
+		// 		console.log(error);
+		// 	});
 	}
 
 
