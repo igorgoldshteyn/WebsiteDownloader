@@ -13,7 +13,7 @@ export function NavBar() {
 				<Link to="/features">Features</Link>
 				<Link to="/about">About</Link>
 				<Link to="/pricing">Pricing</Link>
-				<Link to="/signIn">SignIn</Link>
+				<Link to="/signIn">Sign In</Link>
 
 			</div>
 		</>
