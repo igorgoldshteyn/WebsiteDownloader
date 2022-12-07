@@ -1,6 +1,6 @@
-package com.WebsiteDownloader.WebsiteDownloader.Repository;
+package com.WebsiteDownloader.Repository;
 
-import com.WebsiteDownloader.WebsiteDownloader.Model.User;
+import com.WebsiteDownloader.Model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 

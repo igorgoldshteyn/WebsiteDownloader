@@ -1,9 +1,9 @@
-package com.WebsiteDownloader.WebsiteDownloader.Controllers;
+package com.WebsiteDownloader.Controllers;
 
-import com.WebsiteDownloader.WebsiteDownloader.Model.User;
-import com.WebsiteDownloader.WebsiteDownloader.Repository.UserRepository;
-import com.WebsiteDownloader.WebsiteDownloader.Services.DownloadService;
-import com.WebsiteDownloader.WebsiteDownloader.WebsiteDownloaderApplication;
+import com.WebsiteDownloader.Model.User;
+import com.WebsiteDownloader.Repository.UserRepository;
+import com.WebsiteDownloader.Services.DownloadService;
+import com.WebsiteDownloader.WebsiteDownloaderApplication;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;

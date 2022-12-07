@@ -1,4 +1,4 @@
-package com.WebsiteDownloader.WebsiteDownloader.Model;
+package com.WebsiteDownloader.Model;
 
 import org.springframework.data.annotation.Id;
 
