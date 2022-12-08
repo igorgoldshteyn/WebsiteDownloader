@@ -6,6 +6,7 @@ import com.WebsiteDownloader.Services.DownloadService;
 import com.WebsiteDownloader.WebsiteDownloaderApplication;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,6 +18,7 @@ import java.util.List;
 @RestController
 public class UserController {
 
+
     private final UserRepository repository;
 
     UserController(UserRepository repository){
@@ -25,9 +27,31 @@ public class UserController {
 
     private static Logger logger = LoggerFactory.getLogger(WebsiteDownloaderApplication.class);
 
+//
+//    @PostMapping(path="/add") // Map ONLY POST Requests
+//    public @ResponseBody String addNewUser (@RequestParam String name
+//            , @RequestParam String email) {
+//        // @ResponseBody means the returned String is the response, not a view name
+//        // @RequestParam means it is a parameter from the GET or POST request
+//
+//        User n = new User();
+//        n.setName(name);
+//        n.setEmail(email);
+//        userRepository.save(n);
+//        return "Saved";
+//    }
+//
+//    @GetMapping(path="/all")
+//    public @ResponseBody Iterable<User> getAllUsers() {
+//        // This returns a JSON or XML with the users
+//        return userRepository.findAll();
+//    }
+
+
+
     @GetMapping("/users")
     List<User> getAllUsers() {
-        return repository.findAll();
+        return (List<User>) repository.findAll();
     }
 
     @GetMapping("/users/{id}")
@@ -37,12 +61,18 @@ public class UserController {
     }
 
 
-    @PostMapping
+//    @PostMapping("users/add")
+//        public ResponseEntity createUser(@RequestBody User user) throws URISyntaxException {
+//            User savedUser = repository.save(user);
+//            return ResponseEntity.created(new URI("/clients/" + savedUser.getId())).body(savedUser);
+//        }
+
+        @PostMapping("users/add")
         public ResponseEntity createUser(@RequestBody User user) throws URISyntaxException {
             User savedUser = repository.save(user);
             return ResponseEntity.created(new URI("/clients/" + savedUser.getId())).body(savedUser);
         }
-//
+
         @PutMapping("/users/{id}")
         public ResponseEntity updateUser(@PathVariable Long id, @RequestBody User user) {
             User currentUser = repository.findById(id).orElseThrow(RuntimeException::new);
@@ -58,11 +88,6 @@ public class UserController {
             repository.deleteById(id);
             return ResponseEntity.ok().build();
         }
-
-
-    /////////////////////////////////////////////////////////////////////////////////////////
-
-
 
     @GetMapping("/downloadByUrl")
     public String downloadByUrl(@RequestParam String url) throws IOException, InterruptedException {
