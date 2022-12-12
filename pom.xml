@@ -15,7 +15,7 @@
 	<name>WebsiteDownloader</name>
 	<description>WebsiteDownloader</description>
 	<properties>
-		<java.version>11</java.version>
+		<java.version>19</java.version>
 	</properties>
 	<dependencies>
 		<dependency>

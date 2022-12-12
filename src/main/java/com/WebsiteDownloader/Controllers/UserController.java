@@ -37,14 +37,14 @@ public class UserController {
 //        User n = new User();
 //        n.setName(name);
 //        n.setEmail(email);
-//        userRepository.save(n);
+//        repository.save(n);
 //        return "Saved";
 //    }
-//
+
 //    @GetMapping(path="/all")
 //    public @ResponseBody Iterable<User> getAllUsers() {
 //        // This returns a JSON or XML with the users
-//        return userRepository.findAll();
+//        return repository.findAll();
 //    }
 
 
@@ -60,12 +60,6 @@ public class UserController {
 
     }
 
-
-//    @PostMapping("users/add")
-//        public ResponseEntity createUser(@RequestBody User user) throws URISyntaxException {
-//            User savedUser = repository.save(user);
-//            return ResponseEntity.created(new URI("/clients/" + savedUser.getId())).body(savedUser);
-//        }
 
         @PostMapping("users/add")
         public ResponseEntity createUser(@RequestBody User user) throws URISyntaxException {
