@@ -1,17 +1,19 @@
 package com.WebsiteDownloader.Services;
 
-import com.WebsiteDownloader.WebsiteDownloaderApplication;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
+import java.util.Objects;
+
 @Service
-class LoginService {
+public class SignInService {
 
-    public String SignIn(String login, String password) {
-
-
-        return "OK";
+    public String signIn(String login, String password) {
+        if (Objects.equals(login, "") || Objects.equals(password, "")) {
+            return "login or password is empty";
+        } else {
+            System.out.println("2");
+            return "OK";
+        }
     }
 
     public String passwordRecovery(String login, String password) {
@@ -21,7 +23,7 @@ class LoginService {
     }
 
     public static String signUp() {
-        return "ok";
+        return "signUp";
     }
 
     private String checkPasswordStrength(String password) {
