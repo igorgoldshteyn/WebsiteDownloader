@@ -5,7 +5,6 @@ export function PricingPage() {
     return (
         <div>
             PricingPage
-
         </div>
     )
 }
