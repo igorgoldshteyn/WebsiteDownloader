@@ -3,11 +3,10 @@ package com.WebsiteDownloader.Model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.Table;
 import java.util.Objects;
 
-@Entity(name = "users")
-public class User {
+@Entity(name = "accounts")
+public class Account {
     @Id
     @GeneratedValue
     private Long id;
@@ -19,8 +18,8 @@ public class User {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        User user = (User) o;
-        return Objects.equals(id, user.id) && Objects.equals(name, user.name) && Objects.equals(email, user.email) && Objects.equals(address, user.address);
+        Account account = (Account) o;
+        return Objects.equals(id, account.id) && Objects.equals(name, account.name) && Objects.equals(email, account.email) && Objects.equals(address, account.address);
     }
 
     @Override

@@ -5,6 +5,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -13,36 +15,66 @@ import java.net.http.HttpResponse;
 
 @Service
 public class DownloadService {
-    private static Logger logger = LoggerFactory.getLogger(WebsiteDownloaderApplication.class);
+//    private static Logger logger = LoggerFactory.getLogger(WebsiteDownloaderApplication.class);
 
 
-    public static String downloadByUrl(String url) throws IOException, InterruptedException {
-        logger.info("Service downloadByUrl");
-        logger.info("Url = " + url);
+    public static File downloadByUrl(String url) throws IOException, InterruptedException {
+//        logger.info("Service downloadByUrl");
+//        logger.info("Url = " + url);
+
+        HttpResponse<String> response = null;
         try {
-        HttpClient client = HttpClient.newHttpClient();
-        HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create(url))
-                .build();
+            var client = HttpClient.newHttpClient();
+            var request = HttpRequest.newBuilder().uri(URI.create(url)).build();
 
-        logger.info(request.toString());
-        HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+//        logger.info(request.toString());
+            response = client.send(request, HttpResponse.BodyHandlers.ofString());
 
-        logger.info(response.toString());
+//            File downloadRequestHtml = new File();
+
+        } catch (IOException e) {
+            System.out.println(e);
+//            return e.toString();
+        }
+
+        File websiteHtmlFile = null;
+
+
+
+
+//            websiteHtmlFile = new File("wensite.html");
+//
+//            websiteHtmlFile.
+
+            try {
+                FileWriter myWriter = new FileWriter("website.html");
+                myWriter.write(response.toString());
+                myWriter.close();
+                System.out.println("Successfully wrote to the file.");
+            } catch (IOException e) {
+                System.out.println("An error occurred.");
+                e.printStackTrace();
+            }
+
+
+
+            websiteHtmlFile.createNewFile();
+
+
+
+        // send a response request with this file
+//        logger.info(response.toString());
 
 // сделать создание файла из этого html
 
 
-        return response.body();
+        return websiteHtmlFile;
 
-        }catch (IOException e){
-            System.out.println(e);
-            return e.toString();
-        }
+
     }
 
-      public static String getDownloadRequestsByUserId(String id) {
+    public static String getDownloadRequestsByUserId(String id) {
         return "OK";
-     }
+    }
 }
 
