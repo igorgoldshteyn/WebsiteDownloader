@@ -15,63 +15,38 @@ import java.net.http.HttpResponse;
 
 @Service
 public class DownloadService {
-//    private static Logger logger = LoggerFactory.getLogger(WebsiteDownloaderApplication.class);
+    private static Logger logger = LoggerFactory.getLogger(WebsiteDownloaderApplication.class);
 
 
-    public static File downloadByUrl(String url) throws IOException, InterruptedException {
-//        logger.info("Service downloadByUrl");
-//        logger.info("Url = " + url);
+    public static boolean downloadByUrl(String url) throws IOException, InterruptedException {
+        System.out.println("Service downloadByUrl");
+        System.out.println("Url = " + url);
 
         HttpResponse<String> response = null;
         try {
-            var client = HttpClient.newHttpClient();
-            var request = HttpRequest.newBuilder().uri(URI.create(url)).build();
+            HttpClient client = HttpClient.newHttpClient();
+            HttpRequest request = HttpRequest.newBuilder().uri(URI.create(url)).build();
 
-//        logger.info(request.toString());
             response = client.send(request, HttpResponse.BodyHandlers.ofString());
-
-//            File downloadRequestHtml = new File();
+            System.out.println("response = " + response.body());
 
         } catch (IOException e) {
             System.out.println(e);
-//            return e.toString();
         }
 
-        File websiteHtmlFile = null;
+        try {
+            FileWriter myWriter = new FileWriter("website.html");
+            myWriter.write(response.body());
+            myWriter.close();
+            System.out.println("Successfully wrote to the file.");
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
 
-
-
-
-//            websiteHtmlFile = new File("wensite.html");
-//
-//            websiteHtmlFile.
-
-            try {
-                FileWriter myWriter = new FileWriter("website.html");
-                myWriter.write(response.toString());
-                myWriter.close();
-                System.out.println("Successfully wrote to the file.");
-            } catch (IOException e) {
-                System.out.println("An error occurred.");
-                e.printStackTrace();
-            }
-
-
-
-            websiteHtmlFile.createNewFile();
-
-
-
-        // send a response request with this file
-//        logger.info(response.toString());
-
-// сделать создание файла из этого html
-
-
-        return websiteHtmlFile;
-
-
+        return true;
     }
+
 
     public static String getDownloadRequestsByUserId(String id) {
         return "OK";
