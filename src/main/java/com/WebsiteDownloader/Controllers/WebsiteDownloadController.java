@@ -17,20 +17,20 @@ public class WebsiteDownloadController {
 //    private static Logger logger = LoggerFactory.getLogger(WebsiteDownloaderApplication.class);
 
     @GetMapping("/downloadByUrl")
-    public String downloadByUrl(@RequestParam String url) throws IOException, InterruptedException {
+    public boolean downloadByUrl(@RequestParam String url) throws IOException, InterruptedException {
         if (url != null) {
 //        logger.info("downloadByUrl");
 //        logger.info(url);
+
             return DownloadService.downloadByUrl(url);
 
         } else {
-            System.out.println("URL is null");
-            return "URL is null";
+            return false;
         }
     }
-
-        @GetMapping("/getDownloadRequestsByUserId")
-        public String getDownloadRequestsByUser (@RequestParam String id) throws IOException, InterruptedException {
-            return DownloadService.downloadByUrl(id);
-        }
+//
+//        @GetMapping("/getDownloadRequestsByUserId")
+//        public String getDownloadRequestsByUser (@RequestParam String id) throws IOException, InterruptedException {
+////            return DownloadService.downloadByUrl(id);
+//        }
     }

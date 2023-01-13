@@ -1,7 +1,11 @@
 package com.WebsiteDownloader.Model;
 
+import lombok.Data;
+
 import javax.persistence.*;
 import java.time.LocalDateTime;
+
+@Data
 @Entity
 public class DownloadRequest {
     @Id
@@ -13,11 +17,4 @@ public class DownloadRequest {
 //    private User user;
     private LocalDateTime date;
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 }
