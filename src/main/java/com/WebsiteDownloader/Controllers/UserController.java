@@ -21,8 +21,8 @@ public class UserController {
     UserController(UserRepository repository) {
         this.repository = repository;
     }
-
     private static Logger logger = LoggerFactory.getLogger(WebsiteDownloaderApplication.class);
+
 
     @GetMapping("/accounts")
     List<Account> getAllAccounts() {
