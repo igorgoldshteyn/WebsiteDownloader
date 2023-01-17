@@ -1,18 +1,17 @@
 package com.WebsiteDownloader;
 
-import com.WebsiteDownloader.Repository.UserRepository;
+import com.WebsiteDownloader.Repository.AccountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import java.io.File;
 import java.io.IOException;
 
 @SpringBootApplication
 public class WebsiteDownloaderApplication{
 
-    @Autowired
-    private UserRepository userRepository;
+//    @Autowired
+//    private AccountRepository accountRepository;
 
     public static void main(String[] args) throws IOException {
 

@@ -5,6 +5,7 @@ import com.WebsiteDownloader.Services.DownloadService;
 import com.WebsiteDownloader.WebsiteDownloaderApplication;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.core.io.ByteArrayResource;
 import org.springframework.core.io.Resource;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,10 +20,9 @@ public class WebsiteDownloadController {
 //    private static Logger logger = LoggerFactory.getLogger(WebsiteDownloaderApplication.class);
 
     @GetMapping("/downloadByUrl")
-    public ResponseEntity<Resource> downloadByUrl(@RequestParam String url) throws IOException, InterruptedException {
+    public ResponseEntity<byte[]> downloadByUrl(@RequestParam String url) throws IOException, InterruptedException {
         if (url != null) {
             return DownloadService.downloadByUrl(url);
-
         } else {
             return null;
         }
