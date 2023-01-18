@@ -20,22 +20,29 @@ public class SignInService {
 
     public Boolean signIn(String login, String password) {
 
-        Iterable<Account> allAccounts = repository.findAll(); //????
+        List<Account> allAccounts = (List<Account>) repository.findAll();
 
-//        (List<Account>) repository.findAll()
+        System.out.println("1");
 
-        System.out.println(allAccounts);
-        System.out.println(allAccounts.toString());
+        if (!allAccounts.isEmpty()) {
+        System.out.println("2");
 
-        //finding in a database
-
-
-        if (login.equals("test") && password.equals("test")) {
-            return true;
+            //optimize this method
+            for (Account account : allAccounts) {
+        System.out.println("3");
+                System.out.println(account);
+                if (account.getLogin().equals(login) && account.getPassword().equals(password)) {
+                    return true;
+                }
+            }
         } else {
+        System.out.println("5");
             return false;
         }
+        System.out.println("6");
+        return false;
     }
+
 
     public String passwordRecovery(String login, String password) {
         return "OK";
