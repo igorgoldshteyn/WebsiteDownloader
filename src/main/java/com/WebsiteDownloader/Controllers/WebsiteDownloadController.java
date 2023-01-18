@@ -2,11 +2,6 @@ package com.WebsiteDownloader.Controllers;
 
 
 import com.WebsiteDownloader.Services.DownloadService;
-import com.WebsiteDownloader.WebsiteDownloaderApplication;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.core.io.ByteArrayResource;
-import org.springframework.core.io.Resource;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
